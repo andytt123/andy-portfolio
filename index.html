@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy's Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-color: #8892b0;
+            --highlight: #64ffda;
+            --heading: #ccd6f6;
+            --card-bg: #112240;
+        }
+
+        body {
+            font-family: 'Calibre', 'Inter', 'San Francisco', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        header { text-align: center; margin-bottom: 60px; }
+
+        /* 1. 头像样式 */
+        .profile-img {
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--highlight);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+        }
+
+        h1 { color: var(--heading); font-size: 2.5rem; margin: 10px 0; }
+        h2 { color: var(--heading); border-bottom: 1px solid #233554; padding-bottom: 10px; margin-top: 50px; }
+        .section { margin-bottom: 40px; }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .project-title { color: var(--highlight); font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+
+        /* 图片网格布局：让两张图并排显示 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 两列等宽 */
+            gap: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* 手机端自动变单列 */
+        @media (max-width: 600px) {
+            .image-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #233554;
+            object-fit: cover;
+        }
+
+        .contact-info { background-color: var(--card-bg); padding: 20px; border-radius: 10px; text-align: center; }
+        .contact-info a { color: var(--highlight); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <!-- 🖼️ 图片 1: 头像 -->
+            <img src="images/profile.jpg" alt="Andy Profile" class="profile-img">
+            <h1>Hi, I'm Andy 👋</h1>
+            <p>Computer Science Student @ Brandeis University | Lacrosse Athlete</p>
+        </header>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2>About Me & Lacrosse Life</h2>
+            <p>
+                Beyond coding, I am deeply involved in the Lacrosse community. 
+                Whether I'm playing on the field or coaching the next generation, 
+                teamwork and strategy are at the core of everything I do.
+            </p>
+            
+            <!-- 🖼️ 图片 2: 比赛动作 -->
+            <img src="images/lacrosse-action.jpg" alt="Lacrosse Action" class="feature-img">
+
+            <p style="margin-top: 20px;">
+                I also enjoy coaching and mentoring younger players, helping them improve their skills and game IQ.
+            </p>
+            
+            <!-- 🖼️ 图片 3 & 4: 执教照片 (两张并排) -->
+            <div class="image-grid">
+                <img src="images/coaching.jpg" alt="Coaching Team" class="feature-img">
+                <img src="images/coaching2.jpg" alt="Coaching Discussion" class="feature-img">
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Featured Project: SidelineIQ</h2>
+            
+            <div class="project-card">
+                <a href="#" class="project-title">SidelineIQ App 📱</a>
+                <p>
+                    A comprehensive mobile solution for real-time sports analytics. 
+                    Coaches can track player performance instantly.
+                </p>
+                
+                <!-- 🖼️ 图片 5 & 6: 项目截图 (两张并排) -->
+                <div class="image-grid">
+                    <img src="images/project-mockup.jpg" alt="App Home Screen" class="feature-img">
+                    <img src="images/project-mockup2.jpg" alt="App Analytics Screen" class="feature-img">
+                </div>
+                
+                <p style="font-size: 0.9rem; color: #8892b0;">
+                    Tech Stack: React Native, Python, Firebase
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>I'm currently looking for internship opportunities!</p>
+                <p>📞 Phone: <a href="tel:+18579679155">+1 (857) 967-9155</a></p>
+                <p>✉️ Email: <a href="mailto:andytt@brandeis.edu">andytt@brandeis.edu</a></p>
+            </div>
+        </div>
+
+        <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem;">
+            <p>&copy; 2024 Andy. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
