@@ -3,154 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andy's Portfolio</title>
+    <title>Andy | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a192f;
-            --text-color: #8892b0;
-            --highlight: #64ffda;
-            --heading: #ccd6f6;
-            --card-bg: #112240;
+            --bg-color: #0d1117;
+            --text-main: #ffffff;
+            --text-muted: #8b949e;
+            --accent-color: #22d3ee;
+            --card-bg: #161b22;
+            --border-color: #30363d;
         }
 
         body {
-            font-family: 'Calibre', 'Inter', 'San Francisco', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        a { text-decoration: none; color: var(--accent-color); }
+        
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 50px 0;
+        /* 头部区域 */
+        .header-section {
+            text-align: center;
+            padding-top: 80px;
+            padding-bottom: 60px;
         }
-
-        header { text-align: center; margin-bottom: 60px; }
-
-        /* 1. 头像样式 */
-        .profile-img {
-            width: 150px; height: 150px;
+        
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 3px solid var(--highlight);
             object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+            border: 4px solid var(--accent-color);
+            padding: 4px; 
+            background-color: var(--bg-color);
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
         }
 
-        h1 { color: var(--heading); font-size: 2.5rem; margin: 10px 0; }
-        h2 { color: var(--heading); border-bottom: 1px solid #233554; padding-bottom: 10px; margin-top: 50px; }
-        .section { margin-bottom: 40px; }
+        .greeting {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-        .project-card {
+        .role-badge {
+            font-size: 1rem;
+            color: var(--text-muted);
             background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .project-title { color: var(--highlight); font-size: 1.2rem; font-weight: bold; text-decoration: none; }
-
-        /* 图片网格布局：让两张图并排显示 */
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 两列等宽 */
-            gap: 15px;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            display: inline-block;
+            margin-top: 10px;
         }
 
-        /* 手机端自动变单列 */
-        @media (max-width: 600px) {
-            .image-grid { grid-template-columns: 1fr; }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
         }
 
-        .feature-img {
+        .project-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .stat-row {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(34, 211, 238, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(34, 211, 238, 0.1);
+        }
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .content-img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #233554;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
             object-fit: cover;
+            background-color: #21262d;
+        }
+        .content-img:hover {
+            transform: scale(1.01);
         }
 
-        .contact-info { background-color: var(--card-bg); padding: 20px; border-radius: 10px; text-align: center; }
-        .contact-info a { color: var(--highlight); text-decoration: none; font-weight: bold; }
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul.custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: #d1d5db;
+        }
+        ul.custom-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-container">
         
-        <!-- Header -->
-        <header>
-            <!-- 🖼️ 图片 1: 头像 -->
-            <img src="images/profile.jpg" alt="Andy Profile" class="profile-img">
-            <h1>Hi, I'm Andy 👋</h1>
-            <p>Computer Science Student @ Brandeis University | Lacrosse Athlete</p>
+        <!-- 1. 头部区域 -->
+        <header class="header-section">
+            <!-- 修正路径：images/profile.jpg -->
+            <img src="images/profile.jpg" alt="Andy" class="profile-avatar">
+            <h1 class="greeting">Hi, I'm Andy 👋</h1>
+            <p class="lead" style="color: #a1a1aa;">Business Major | Math Minor</p>
+            <div class="role-badge">
+                Product Strategy • Health Data Science • Athlete
+            </div>
         </header>
 
-        <!-- About Section -->
-        <div class="section">
-            <h2>About Me & Lacrosse Life</h2>
-            <p>
-                Beyond coding, I am deeply involved in the Lacrosse community. 
-                Whether I'm playing on the field or coaching the next generation, 
-                teamwork and strategy are at the core of everything I do.
-            </p>
+        <!-- 2. SidelineIQ 项目 -->
+        <section>
+            <h2 class="section-title">🚀 Featured Project: SidelineIQ</h2>
             
-            <!-- 🖼️ 图片 2: 比赛动作 -->
-            <img src="images/lacrosse-action.jpg" alt="Lacrosse Action" class="feature-img">
-
-            <p style="margin-top: 20px;">
-                I also enjoy coaching and mentoring younger players, helping them improve their skills and game IQ.
-            </p>
-            
-            <!-- 🖼️ 图片 3 & 4: 执教照片 (两张并排) -->
-            <div class="image-grid">
-                <img src="images/coaching.jpg" alt="Coaching Team" class="feature-img">
-                <img src="images/coaching2.jpg" alt="Coaching Discussion" class="feature-img">
-            </div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="section">
-            <h2>Featured Project: SidelineIQ</h2>
-            
-            <div class="project-card">
-                <a href="#" class="project-title">SidelineIQ App 📱</a>
-                <p>
-                    A comprehensive mobile solution for real-time sports analytics. 
-                    Coaches can track player performance instantly.
+            <div class="project-box">
+                <h3 style="margin-bottom: 15px;">Mobile Athlete Injury Prediction System</h3>
+                <p style="color: #d1d5db;">
+                    <strong>Founder & Product Lead.</strong> Addressing youth sports injuries through technology. We built a platform leveraging <strong>Computer Vision</strong> and <strong>Pose Estimation</strong> to analyze movement mechanics in real-time.
                 </p>
-                
-                <!-- 🖼️ 图片 5 & 6: 项目截图 (两张并排) -->
-                <div class="image-grid">
-                    <img src="images/project-mockup.jpg" alt="App Home Screen" class="feature-img">
-                    <img src="images/project-mockup2.jpg" alt="App Analytics Screen" class="feature-img">
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <strong>25%</strong>
+                        <span>Injury Reduction</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>CV + ML</strong>
+                        <span>Core Tech Stack</span>
+                    </div>
                 </div>
-                
-                <p style="font-size: 0.9rem; color: #8892b0;">
-                    Tech Stack: React Native, Python, Firebase
-                </p>
-            </div>
-        </div>
 
-        <!-- Contact Section -->
-        <div class="section">
-            <h2>Get In Touch</h2>
-            <div class="contact-info">
-                <p>I'm currently looking for internship opportunities!</p>
-                <p>📞 Phone: <a href="tel:+18579679155">+1 (857) 967-9155</a></p>
-                <p>✉️ Email: <a href="mailto:andytt@brandeis.edu">andytt@brandeis.edu</a></p>
-            </div>
-        </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <!-- 修正路径：images/project-mockup.jpg -->
+                        <img src="images/project-mockup.jpg" alt="App Interface" class="content-img">
+                    </div>
+                    <div class="col-md-6">
+                         <!-- 修正路径：images/project-mockup2.jpg -->
+                        <img src="images/project-mockup2.jpg" alt="Data Analytics" class="content-img">
+                    </div>
+                </div>
 
-        <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem;">
-            <p>&copy; 2024 Andy. All rights reserved.</p>
+                <ul class="custom-list">
+                    <li>Developed proprietary algorithms for data-informed workload management.</li>
+                    <li>Led pilot testing with local lacrosse clubs, validating the model's effectiveness.</li>
+                    <li>Bridged the gap between raw health data and actionable coaching insights.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Lacrosse 生涯 -->
+        <section>
+            <h2 class="section-title">🥍 About Me & Lacrosse Life</h2>
+            
+            <p style="margin-bottom: 20px; color: #d1d5db;">
+                Beyond coding and data, I am deeply involved in the Lacrosse community. Whether I'm competing internationally or coaching the next generation, strategy and resilience are at the core of everything I do.
+            </p>
+
+            <!-- 修正路径：images/lacrosse-action.jpg -->
+            <img src="images/lacrosse-action.jpg" alt="Lacrosse Action" class="content-img">
+
+            <div class="mt-4">
+                <h4 style="color: #fff; margin-bottom: 15px;">International Competition</h4>
+                <ul class="custom-list">
+                    <li><strong>Represented China</strong> in international competitions, contributing defensively and strategically.</li>
+                    <li>Notably enhanced special team performance during the <span style="color: var(--accent-color);">2023 Hong Kong Open</span> and <span style="color: var(--accent-color);">2024 World Box Championships</span>.</li>
+                    <li>Role: Strategic Defense & Special Teams Specialist.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. 教学与社区 -->
+        <section>
+            <h2 class="section-title">🌱 Mentorship & Coaching</h2>
+            
+            <p style="color: #d1d5db; margin-bottom: 25px;">
+                I am dedicated to mentoring younger players, significantly improving team communication, cohesion, and strategic on-field decisions. It's about elevating overall competitive performance and contributing to notable tournament placements.
+            </p>
+
+            <div class="row g-3">
+                <div class="col-6">
+                    <!-- 修正路径：images/coaching.jpg -->
+                    <img src="images/coaching.jpg" alt="Coaching Kids" class="content-img" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="col-6">
+                    <!-- 修正路径：images/coaching2.jpg -->
+                    <img src="images/coaching2.jpg" alt="Team Talk" class="content-img" style="height: 200px; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Andy. Built with Passion & Data.</p>
         </footer>
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
