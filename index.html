@@ -21,10 +21,11 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.7;
-            padding-bottom: 80px;
+            padding-bottom: 40px;
         }
 
-        a { text-decoration: none; color: var(--accent-color); }
+        a { text-decoration: none; color: var(--accent-color); transition: 0.3s; }
+        a:hover { color: #fff; }
         
         .main-container {
             max-width: 800px;
@@ -134,11 +135,36 @@
             color: var(--accent-color);
         }
 
+        /* 联系方式按钮样式 */
+        .btn-custom {
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 5px 10px; /* 增加一点垂直间距，防止手机上挤在一起 */
+            border: 1px solid var(--accent-color);
+            display: inline-block;
+        }
+        .btn-custom-primary {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        .btn-custom-primary:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .btn-custom-outline {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+        .btn-custom-outline:hover {
+            background-color: rgba(34, 211, 238, 0.1);
+            color: #fff;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding-top: 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
@@ -150,7 +176,6 @@
         
         <!-- 1. 头部区域 -->
         <header class="header-section">
-            <!-- 修正路径：images/profile.jpg -->
             <img src="images/profile.jpg" alt="Andy" class="profile-avatar">
             <h1 class="greeting">Hi, I'm Andy 👋</h1>
             <p class="lead" style="color: #a1a1aa;">Business Major | Math Minor</p>
@@ -159,7 +184,45 @@
             </div>
         </header>
 
-        <!-- 2. SidelineIQ 项目 -->
+        <!-- 2. Lacrosse 生涯 -->
+        <section>
+            <h2 class="section-title">🥍 About Me & Lacrosse Life</h2>
+            
+            <p style="margin-bottom: 20px; color: #d1d5db;">
+                Beyond coding and data, I am deeply involved in the Lacrosse community. Whether I'm competing internationally or coaching the next generation, strategy and resilience are at the core of everything I do.
+            </p>
+
+            <img src="images/lacrosse-action.jpg" alt="Lacrosse Action" class="content-img">
+
+            <div class="mt-4">
+                <h4 style="color: #fff; margin-bottom: 15px;">International Competition</h4>
+                <ul class="custom-list">
+                    <li><strong>Represented China</strong> in international competitions, contributing defensively and strategically.</li>
+                    <li>Notably enhanced special team performance during the <span style="color: var(--accent-color);">2023 Hong Kong Open</span> and <span style="color: var(--accent-color);">2024 World Box Championships</span>.</li>
+                    <li>Role: Strategic Defense & Special Teams Specialist.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. 教学与社区 -->
+        <section>
+            <h2 class="section-title">🌱 Mentorship & Coaching</h2>
+            
+            <p style="color: #d1d5db; margin-bottom: 25px;">
+                I am dedicated to mentoring younger players, significantly improving team communication, cohesion, and strategic on-field decisions. It's about elevating overall competitive performance and contributing to notable tournament placements.
+            </p>
+
+            <div class="row g-3">
+                <div class="col-6">
+                    <img src="images/coaching.jpg" alt="Coaching Kids" class="content-img" style="height: 200px; object-fit: cover;">
+                </div>
+                <div class="col-6">
+                    <img src="images/coaching2.jpg" alt="Team Talk" class="content-img" style="height: 200px; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SidelineIQ 项目 -->
         <section>
             <h2 class="section-title">🚀 Featured Project: SidelineIQ</h2>
             
@@ -182,11 +245,9 @@
 
                 <div class="row g-3 mb-3">
                     <div class="col-md-6">
-                        <!-- 修正路径：images/project-mockup.jpg -->
                         <img src="images/project-mockup.jpg" alt="App Interface" class="content-img">
                     </div>
                     <div class="col-md-6">
-                         <!-- 修正路径：images/project-mockup2.jpg -->
                         <img src="images/project-mockup2.jpg" alt="Data Analytics" class="content-img">
                     </div>
                 </div>
@@ -199,49 +260,33 @@
             </div>
         </section>
 
-        <!-- 3. Lacrosse 生涯 -->
-        <section>
-            <h2 class="section-title">🥍 About Me & Lacrosse Life</h2>
-            
-            <p style="margin-bottom: 20px; color: #d1d5db;">
-                Beyond coding and data, I am deeply involved in the Lacrosse community. Whether I'm competing internationally or coaching the next generation, strategy and resilience are at the core of everything I do.
+        <!-- 5. 联系方式 (已更新) -->
+        <section style="text-align: center; margin-top: 100px; margin-bottom: 60px;">
+            <h2 style="color: #fff; font-weight: 700; margin-bottom: 20px;">Let's Connect</h2>
+            <p style="color: #8b949e; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Open to opportunities in Product Strategy, Data Science, and Sports Tech.
             </p>
-
-            <!-- 修正路径：images/lacrosse-action.jpg -->
-            <img src="images/lacrosse-action.jpg" alt="Lacrosse Action" class="content-img">
-
-            <div class="mt-4">
-                <h4 style="color: #fff; margin-bottom: 15px;">International Competition</h4>
-                <ul class="custom-list">
-                    <li><strong>Represented China</strong> in international competitions, contributing defensively and strategically.</li>
-                    <li>Notably enhanced special team performance during the <span style="color: var(--accent-color);">2023 Hong Kong Open</span> and <span style="color: var(--accent-color);">2024 World Box Championships</span>.</li>
-                    <li>Role: Strategic Defense & Special Teams Specialist.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 4. 教学与社区 -->
-        <section>
-            <h2 class="section-title">🌱 Mentorship & Coaching</h2>
             
-            <p style="color: #d1d5db; margin-bottom: 25px;">
-                I am dedicated to mentoring younger players, significantly improving team communication, cohesion, and strategic on-field decisions. It's about elevating overall competitive performance and contributing to notable tournament placements.
-            </p>
+            <div>
+                <!-- 邮箱按钮 -->
+                <a href="mailto:andytt@brandeis.edu" class="btn-custom btn-custom-primary">
+                    andytt@brandeis.edu
+                </a>
+                
+                <!-- 电话按钮 -->
+                <a href="tel:8579619155" class="btn-custom btn-custom-outline">
+                    857-961-9155
+                </a>
 
-            <div class="row g-3">
-                <div class="col-6">
-                    <!-- 修正路径：images/coaching.jpg -->
-                    <img src="images/coaching.jpg" alt="Coaching Kids" class="content-img" style="height: 200px; object-fit: cover;">
-                </div>
-                <div class="col-6">
-                    <!-- 修正路径：images/coaching2.jpg -->
-                    <img src="images/coaching2.jpg" alt="Team Talk" class="content-img" style="height: 200px; object-fit: cover;">
-                </div>
+                <!-- LinkedIn (保留作为选项，如果你不需要可以删掉这行) -->
+                <a href="https://www.linkedin.com/" target="_blank" class="btn-custom btn-custom-outline">
+                    LinkedIn
+                </a>
             </div>
         </section>
 
         <footer class="footer">
-            <p>© 2024 Andy. Built with Passion & Data.</p>
+            <!-- 底部文字已移除 -->
         </footer>
 
     </div>
